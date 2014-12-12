@@ -1,3 +1,14 @@
+//
+// Name: readme.txt
+// readme.txt the design details
+//
+// @author: dag4202: dyangelo a grullon
+//
+// git:
+//	version: 0.3
+//	path:  home/stu10/s4/dag4202/Courses/cs243v2/Projects/03/.git
+// // // // // // // // // // // // // // // // // // // // // // // //
+
 mysh.c was implemented using a combination of top to bottom to top design.  mysh.c is the driver, shell.h is the blueprint and shell.c is the implementation of the blueprint.  A 'Command' type was used to hold the commands in the command log. This 'Command' type is defined in command.h.  I decided to give the command type a parameter that pointed to a function to store the shell routine for seamless execution. A queue is used to represent the command log. The parser is a function module incorporated in the shell blueprint.  
 
 The driver, mysh.c, does the following in order: 

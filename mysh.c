@@ -5,7 +5,7 @@
 // @author: dag4202: dyangelo a grullon
 //
 // git:
-//	version: 0.1
+//	version: 0.3
 //	path:  home/stu10/s4/dag4202/Courses/cs243v2/Projects/03/.git
 // // // // // // // // // // // // // // // // // // // // // // // //
 
@@ -18,7 +18,9 @@
 
 #include "shell.h"
 
-
+/**
+* The Driver for shell.h
+*/
 int main (int argc, char *argv[]){
 	if (shell_init(argc, argv) == INTERNAL_ERROR){
 		exit(EXIT_FAILURE);
