@@ -5,7 +5,7 @@
 // @author: dag4202: dyangelo a grullon
 //
 // git:
-//	version: 0.0
+//	version: 0.1
 //	path:  home/stu10/s4/dag4202/Courses/cs243v2/Projects/03/.git
 // // // // // // // // // // // // // // // // // // // // // // // //
 
@@ -50,7 +50,6 @@ int main (int argc, char *argv[]){
 		case INTERNAL_ERROR:
 			break;
 		case EXTERNAL_ERROR:
-			perror(arv[1]);
 			break;
 		case QUIT:
 			free(buff);

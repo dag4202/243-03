@@ -1,3 +1,16 @@
+//
+// Name: queue.c
+// queue.c is the implementation using FIFO ordering. Resizes to hold 
+// a dynamic amount of various data types. Uses a double pointer to hold
+// the data objects.
+//
+// @author: dag4202: dyangelo a grullon
+//
+// git:
+//	version: 0.1
+//	path:  home/stu10/s4/dag4202/Courses/cs243v2/Projects/03/.git
+// // // // // // // // // // // // // // // // // // // // // // // //
+
 #include <stdlib.h>
 #include <assert.h>
 
@@ -16,6 +29,7 @@ typedef struct queueStruct *Queue;
 #define _QUEUE_IMPL_
 #include "queue.h"
 
+//Initiates a que with initial values of 0
 Queue que_create(void) {
 	Queue queue;
 
@@ -27,9 +41,9 @@ Queue que_create(void) {
 	return queue;
 }
 
+//Frees all allocated memory in the queue
 void que_destroy(Queue queue){
 	assert(queue != 0);
-
 	if(queue->content!=0) {
 		free(queue->content);
 	}
@@ -37,6 +51,7 @@ void que_destroy(Queue queue){
 	free( queue );
 }
 
+//Removes all data from the queue
 void que_clear( Queue queue ){
 	if (queue->content != 0) {
 		free(queue->content);
@@ -47,6 +62,7 @@ void que_clear( Queue queue ){
 	queue->start = 0;
 }
 
+//Add data to the queue. Dynamically allocates if the queue is full.
 void que_push(void *data, Queue queue){
 	assert(queue!=0);
 	if (queue->content==0){
@@ -79,6 +95,7 @@ void que_push(void *data, Queue queue){
 	
 }
 
+// Remove and Return the data in the front of the queue.
 void *que_pop( Queue queue ) {
 	assert((queue->end > 0) && (queue->start < queue->end));
 	
@@ -91,6 +108,7 @@ void *que_pop( Queue queue ) {
 	return data;
 }
 
+//Return the front most data object.
 void *que_front(Queue queue) {
 	assert((queue->end > 0) && (queue->start < queue->end));
 	
@@ -98,10 +116,13 @@ void *que_front(Queue queue) {
 
 }
 
+//Returns true if the queue is empty, and false otherwise
 int que_isEmpty(Queue queue){
 	return (queue->start == queue->end);
 }
 
+//Gets the data in the queue based on pos, which is used
+//as an index relative to the front of the queue.
 void *que_get( unsigned int pos, Queue queue){
 	assert((pos+queue->start) < queue->end);
 
@@ -109,6 +130,7 @@ void *que_get( unsigned int pos, Queue queue){
 	
 }
 
+//Returns the size of the queue.
 unsigned int que_size(Queue queue){
 	return (queue->end - queue->start);
 }

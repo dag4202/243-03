@@ -1,12 +1,14 @@
-/**
-* queue.h
-* Dyangelo Grullon
-* 
-* Queue
-*
-* A Queue ADT using FIFO data management, multiple data types, and resizing 
-* capabilities
-*/
+//
+// Name: queue.h
+// queue.h is a Queue ADT using FIFO ordering. Resizes to hold a dynamic 
+// amount of various data types.
+//
+// @author: dag4202: dyangelo a grullon
+//
+// git:
+//	version: 0.1
+//	path:  home/stu10/s4/dag4202/Courses/cs243v2/Projects/03/.git
+// // // // // // // // // // // // // // // // // // // // // // // //
 
 #ifndef _QUEUE_H_
 #define _QUEUE_H_
@@ -41,15 +43,28 @@ void que_clear(Queue queue);
 void que_push(void *data, Queue queue);
 
 /**
-* Removes and returnsthe first node in the queu
+* Removes and returns the first node in the queue.
 */
 void *que_pop(Queue queue);
 
+/**
+* Returns the first node in the queue.
+*/
 void *que_front(Queue queue);
 
+/**
+* Returns 1 if the queue is empty, and 0 otherwise.
+*/
 int que_isEmpty(Queue queue);
 
+/**
+* Gets the data at the desired position in the queue relative to the
+* front of the queue. 
+*/
 void *que_get( unsigned int pos, Queue queue);
 
+/**
+* Returns the number of objects held by the given queue.
+*/
 unsigned int que_size(Queue queue);
 #endif
